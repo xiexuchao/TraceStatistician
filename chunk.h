@@ -7,7 +7,7 @@
 
 #define SIZE_CHUNK	1024	//MB
 #define SIZE_WINDOW 60	//MIN
-#define __NETAPP_TRACE__
+//#define __NETAPP_TRACE__
 
 struct pool_info{
 	int size_chunk;	

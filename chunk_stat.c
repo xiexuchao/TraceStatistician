@@ -2,46 +2,50 @@
 
 void main()
 {
-	char out_file[20]="1024_60-netapp.txt";	//chk size_win size
+	char file_o[20]="1024_60-netapp.txt";	//chk size_win size
+	char path_i[100]="F:\\MSR Trace\\";
+	char path_o[100]="results\\";
+	char path_trace[100];
+	char path_reslt[100];
+
+	strcpy(path_reslt,strcat(path_o,file_o));
 	
-	run("UMNtrace1_10.csv",out_file);
-	
-	/*run("hm_0.csv",out_file);
-	run("hm_1.csv",out_file);
-	run("mds_0.csv",out_file);
-	run("mds_1.csv",out_file);
-	run("prn_0.csv",out_file);
-	run("prn_1.csv",out_file);
-	run("proj_0.csv",out_file);
-	run("proj_1.csv",out_file);
-	run("proj_2.csv",out_file);
-	run("proj_3.csv",out_file);
-	run("proj_4.csv",out_file);
-	run("prxy_0.csv",out_file);
-	run("prxy_1.csv",out_file);
-	run("rsrch_0.csv",out_file);
-	run("rsrch_1.csv",out_file);
-	run("rsrch_2.csv",out_file);
-	run("src1_0.csv",out_file);
-	run("src1_1.csv",out_file);
-	run("src1_2.csv",out_file);
-	run("src2_0.csv",out_file);
-	run("src2_1.csv",out_file);
-	run("src2_2.csv",out_file);
-	run("stg_0.csv",out_file);
-	run("stg_1.csv",out_file);
-	run("ts_0.csv",out_file);
-	run("usr_0.csv",out_file);
-	run("usr_1.csv",out_file);
-	run("usr_2.csv",out_file);
-	run("wdev_0.csv",out_file);
-	run("wdev_1.csv",out_file);
-	run("wdev_2.csv",out_file);
-	run("wdev_3.csv",out_file);
-	run("web_0.csv",out_file);
-	run("web_1.csv",out_file);
-	run("web_2.csv",out_file);
-	run("web_3.csv",out_file);*/
+	run(strcat(strcpy(path_trace,path_i),"hm_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"hm_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"mds_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"mds_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"prn_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"prn_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"proj_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"proj_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"proj_2.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"proj_3.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"proj_4.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"prxy_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"prxy_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"rsrch_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"rsrch_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"rsrch_2.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"src1_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"src1_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"src1_2.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"src2_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"src2_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"src2_2.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"stg_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"stg_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"ts_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"usr_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"usr_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"usr_2.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"wdev_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"wdev_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"wdev_2.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"wdev_3.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"web_0.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"web_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"web_2.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"web_3.csv"),path_reslt);
 }
 
 void run(char *trace,char *out)
@@ -520,7 +524,7 @@ void output(struct pool_info *pool)
 		chk_all++;
 	}
 
-	fprintf(pool->file_output,"%-10s ",pool->filename_trace);
+	fprintf(pool->file_output,"%-40s",pool->filename_trace);
 	fprintf(pool->file_output,"%-10lf",((double)chk_0/(double)pool->chunk_all));
 	fprintf(pool->file_output,"%-10lf",((double)chk_10/(double)pool->chunk_all));
 	fprintf(pool->file_output,"%-10lf",((double)chk_100/(double)pool->chunk_all));
@@ -530,6 +534,17 @@ void output(struct pool_info *pool)
 	fprintf(pool->file_output,"%-10lf",((double)chk_all/(double)pool->chunk_all));
 	fprintf(pool->file_output,"\n");
 	fflush(pool->file_output);
+
+	/*fprintf(pool->file_output,"[acs]%-35s",pool->filename_trace);
+	fprintf(pool->file_output,"%-10lf",((double)(chk_0-chk_0)/(double)pool->chunk_acs));
+	fprintf(pool->file_output,"%-10lf",((double)(chk_10-chk_0)/(double)pool->chunk_acs));
+	fprintf(pool->file_output,"%-10lf",((double)(chk_100-chk_0)/(double)pool->chunk_acs));
+	fprintf(pool->file_output,"%-10lf",((double)(chk_1k-chk_0)/(double)pool->chunk_acs));
+	fprintf(pool->file_output,"%-10lf",((double)(chk_10k-chk_0)/(double)pool->chunk_acs));
+	fprintf(pool->file_output,"%-10lf",((double)(chk_100k-chk_0)/(double)pool->chunk_acs));
+	fprintf(pool->file_output,"%-10lf",((double)(chk_all-chk_0)/(double)pool->chunk_acs));
+	fprintf(pool->file_output,"\n");
+	fflush(pool->file_output);*/
 	
 	/*for(i=0;i<1000;i++)
 	{
