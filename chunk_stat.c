@@ -2,14 +2,19 @@
 
 void main()
 {
-	char file_o[20]="1024_60-netapp.txt";	//chk size_win size
+#ifdef __NETAPP_TRACE__
+	char file_o[100]="NetApp chk1G-win1h.txt";	//chk size_win size
+	char path_i[100]="F:\\Netapp Trace\\";
+#else
+	char file_o[100]="MSR chk1G-win1h.txt";	//chk size_win size
 	char path_i[100]="F:\\MSR Trace\\";
+#endif
 	char path_o[100]="results\\";
 	char path_trace[100];
 	char path_reslt[100];
 
 	strcpy(path_reslt,strcat(path_o,file_o));
-	
+	/*
 	run(strcat(strcpy(path_trace,path_i),"hm_0.csv"),path_reslt);
 	run(strcat(strcpy(path_trace,path_i),"hm_1.csv"),path_reslt);
 	run(strcat(strcpy(path_trace,path_i),"mds_0.csv"),path_reslt);
@@ -46,6 +51,13 @@ void main()
 	run(strcat(strcpy(path_trace,path_i),"web_1.csv"),path_reslt);
 	run(strcat(strcpy(path_trace,path_i),"web_2.csv"),path_reslt);
 	run(strcat(strcpy(path_trace,path_i),"web_3.csv"),path_reslt);
+	*/
+	run(strcat(strcpy(path_trace,path_i),"UMNtrace1_10.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"UMNtrace1_13.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"UMNtrace2_1.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"UMNtrace2_5.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"UMNtrace3_14.csv"),path_reslt);
+	run(strcat(strcpy(path_trace,path_i),"UMNtrace3_15.csv"),path_reslt);
 }
 
 void run(char *trace,char *out)
